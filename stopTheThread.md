@@ -5,10 +5,10 @@ Stop the thread!
 Javascript引擎是用java实现的，所以问题的本质成了怎么样在给定时间内停掉一个java线程。
 用Thread.stop()? 现在还用这个方法的程序员已经不多了吧。。。不解释了，呵呵。
 那么剩下的基本就两种方式了：
-•	用一个线程间share的变量来做flag
-
+1.  用一个线程间share的变量来做flag
 每次被控线程作基本操作的时候，先判断flag再执行，否则结束自己的逻辑。
-•	用线程interrupt协作机制来停线程
+
+2.  用线程interrupt协作机制来停线程
 
 这里的前提条件是你的线程得要响应收到的interrupt。线程不响应interrupt或者直接吞掉InterruptException，你也没办法。
 
