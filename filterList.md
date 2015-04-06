@@ -19,7 +19,7 @@ for(Integer i : toFilter) {
 ```java
 List<Integer> toFilter = Arrays.asList(1, -3, 9, 0);
 List<Integer> filtered = toFilter.stream()
-  .filter((i) -> i > 2)
+  .filter((i) -> i > 0)
   .collect(Collectors.toList());
 ```
 `filter()`函数直击问题核心，它的参数是个lambda表达式：
@@ -46,7 +46,7 @@ Iterable<Integer> filtered = new Iterable<Integer>() {
       public boolean hasNext() {
         while(it.hasNext()) {
           i = it.next();
-          if(i > 0) {
+          if(i > 0) { //Evaluate at lazy
             return true;
           }
         }
@@ -75,7 +75,7 @@ for(Integer i : filtered)
 def filter(toFilter: List[Int]): List[Int] = {
   toFilter match {
     case List() => List()
-    case first::tail => if(i > 0) first :: filter(tail)
+    case first::tail => if(first > 0) first :: filter(tail)
                     else filter(toFilter.tail)
   }
 }
