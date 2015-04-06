@@ -13,3 +13,15 @@ for(Integer i : toFilter) {
 }
 ```
 经过这个循环，filtered就成了`[1, 9]`。很简单！
+
+2. Java8 stream
+如果你用Java8来做，就多了functional programming的味道：
+```java
+List<Integer> toFilter = Arrays.asList(1, -3, 9, 0);
+List<Integer> filtered = toFilter.stream()
+  .filter((i) -> i > 2)
+  .collect(Collectors.toList());
+```
+.filter函数直击问题核心，它的参数是个lambda表达式：
+｀Predicate<Integer> p = (Integer i) -> i > 2;｀
+lambda表达式简单明了地表达了逻辑意图。
