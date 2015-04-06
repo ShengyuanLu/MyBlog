@@ -2,7 +2,7 @@ Filter a list
 =============
 过滤操作是一种工作中常用的集合操作。这种操作实在是太典型了，我要用这个例子来展示各种编程的做法。举个例子，我要在一个整数list里面过滤掉小于0的数。
 
-1. 循环过滤
+## 循环过滤
 听上去这种做法很简单，很直观：
 ```java
 List<Integer> filtered = new ArrayList<>();
@@ -14,7 +14,7 @@ for(Integer i : toFilter) {
 ```
 经过这个循环，filtered就成了`[1, 9]`。很简单！
 
-2. Java8 stream
+##  Java8 stream
 如果你用Java8来做，就多了functional programming的味道：
 ```java
 List<Integer> toFilter = Arrays.asList(1, -3, 9, 0);
@@ -26,13 +26,14 @@ List<Integer> filtered = toFilter.stream()
 `Predicate<Integer> p = (Integer i) -> i > 0;`
 lambda表达式简单明了地表达了逻辑意图。 当然，它背后也是利用循环过滤的做法。
 
-3. 延迟计算（Lazy Evaluation）
+##  延迟计算（Lazy Evaluation）
 假设我拿到这个过滤之后的filtered，然后由于后续代码中的逻辑分支，filtered只被用了其中的一部分元素。那么之前对**所有元素的循环过滤操作就是浪费的**！
 这个场景下，延迟计算就派上用场了。延迟计算也是来自于functional programming的一种做法。也就是用到的时候再进行计算。在我们这个例子里面，就是当过滤list真正被用的时候，再进行过滤操作。
 ```java
 Iterable<Integer> filtered = new Iterable<Integer>() {
   @Override
   public Iterator<Integer> iterator() {
+  
     return new Iterator<Integer>() {
       Iterator<Integer> it = toFilter.iterator();
       Integer i;
@@ -47,6 +48,7 @@ Iterable<Integer> filtered = new Iterable<Integer>() {
         }
         return false;
       }
+      
       @Override
       public Integer next() {
         return i;
@@ -55,3 +57,10 @@ Iterable<Integer> filtered = new Iterable<Integer>() {
   }
 };
 ```
+是不是有点复杂？那么我们再写一段测试代码：
+```java
+for(Integer i : filtered)
+  System.out.println(i);
+```
+然后再打些断点。你会发现当返回这个filtered的时候，没有任何过滤的操作。只有当for循环的时候才会产生判断操作。这就是延迟计算。
+  
