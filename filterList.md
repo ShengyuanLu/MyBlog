@@ -22,6 +22,6 @@ List<Integer> filtered = toFilter.stream()
   .filter((i) -> i > 2)
   .collect(Collectors.toList());
 ```
-.filter函数直击问题核心，它的参数是个lambda表达式：
+`filter()`函数直击问题核心，它的参数是个lambda表达式：
 `Predicate<Integer> p = (Integer i) -> i > 2;`
-lambda表达式简单明了地表达了逻辑意图。
+lambda表达式简单明了地表达了逻辑意图。 当然，它背后也是利用循环过滤的做法。
