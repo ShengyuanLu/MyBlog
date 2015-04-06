@@ -1,4 +1,4 @@
-Filter a list
+过滤List的4种做法（Filter a List with 4 ways）
 =============
 过滤操作是一种工作中常用的集合操作。这种操作实在是太典型了，我用这个例子来展示各种编程的做法。举个例子，我要在一个整数list里面过滤掉小于0的数。
 
@@ -75,9 +75,29 @@ for(Integer i : filtered)
 def filter(toFilter: List[Int]): List[Int] = {
   toFilter match {
     case List() => List()
-    case i::tail => if(i > 0) x :: filter(tail)
+    case first::tail => if(i > 0) first :: filter(tail)
                     else filter(toFilter.tail)
   }
 }
 ```
 不是因为Java代码不能作，而是用Java实现这段逻辑会有点麻烦。
+下面几乎与Scala等价的代码：
+```scala
+List<Integer> filter(List<Integer> toFilter) {
+  if (toFilter.isEmpty()) {
+    return toFilter;
+  }
+  
+  Integer first = toFilter.get(0);
+  List<Integer> tail = toFilter.subList(1, toFilter.size());
+  if (first > 0) {
+    List<Integer> result = new ArrayList<>();
+    result.add(first);
+    result.addAll(filter(tail)); //Recursive
+    return result;
+    
+  } else {
+    return filter(tail); //Recursive
+  }
+}
+```
