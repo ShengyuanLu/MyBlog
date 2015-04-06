@@ -23,11 +23,35 @@ List<Integer> filtered = toFilter.stream()
   .collect(Collectors.toList());
 ```
 `filter()`函数直击问题核心，它的参数是个lambda表达式：
-`Predicate<Integer> p = (Integer i) -> i > 2;`
+`Predicate<Integer> p = (Integer i) -> i > 0;`
 lambda表达式简单明了地表达了逻辑意图。 当然，它背后也是利用循环过滤的做法。
 
 3. 延迟计算（Lazy Evaluation）
 假设我拿到这个过滤之后的filtered，然后由于后续代码中的逻辑分支，filtered只被用了其中的一部分元素。那么之前对**所有元素的循环过滤操作就是浪费的**！
 这个场景下，延迟计算就派上用场了。延迟计算也是来自于functional programming的一种做法。也就是用到的时候再进行计算。在我们这个例子里面，就是当过滤list真正被用的时候，再进行过滤操作。
-
-
+```java
+Iterable<Integer> filtered = new Iterable<Integer>() {
+  @Override
+  public Iterator<Integer> iterator() {
+    return new Iterator<Integer>() {
+      Iterator<Integer> it = toFilter.iterator();
+      Integer i;
+      
+      @Override
+      public boolean hasNext() {
+        while(it.hasNext()) {
+          i = it.next();
+          if(i > 0) {
+            return true;
+          }
+        }
+        return false;
+      }
+      @Override
+      public Integer next() {
+        return i;
+      }
+    };
+  }
+};
+```
