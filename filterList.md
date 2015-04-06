@@ -25,3 +25,6 @@ List<Integer> filtered = toFilter.stream()
 `filter()`函数直击问题核心，它的参数是个lambda表达式：
 `Predicate<Integer> p = (Integer i) -> i > 2;`
 lambda表达式简单明了地表达了逻辑意图。 当然，它背后也是利用循环过滤的做法。
+
+3. 延迟计算（Lazy Evaluation）
+假设我拿到这个过滤之后的filtered，然后由于后续代码中的逻辑分支，filtered只被用了其中的一部分元素。那么之前对*所有元素的循环过滤操作就是浪费的*！
