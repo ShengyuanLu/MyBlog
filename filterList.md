@@ -1,6 +1,6 @@
 Filter a list
 =============
-过滤操作是一种工作中常用的集合操作。这种操作实在是太典型了，我要用这个例子来展示各种编程的做法。举个例子，我要在一个整数list里面过滤掉小于0的数。
+过滤操作是一种工作中常用的集合操作。这种操作实在是太典型了，我用这个例子来展示各种编程的做法。举个例子，我要在一个整数list里面过滤掉小于0的数。
 
 ## 做法1: 循环过滤
 听上去这种做法很简单，很直观：
@@ -75,8 +75,9 @@ for(Integer i : filtered)
 def filter(toFilter: List[Int]): List[Int] = {
   toFilter match {
     case List() => List()
-    case i::rest => if(i > 0) x :: filter(rest)
+    case i::tail => if(i > 0) x :: filter(tail)
                     else filter(toFilter.tail)
   }
 }
 ```
+不是因为Java代码不能作，而是用Java实现这段逻辑会有点麻烦。
