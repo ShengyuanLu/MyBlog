@@ -68,7 +68,7 @@ for(Integer i : filtered)
 ```
 然后再打些断点。你会发现当返回这个filtered的时候，没有任何过滤的操作。只有当for循环的时候才会产生判断操作。这就是延迟计算。
   
-##  做法4: 递归计算（Recusive）
+##  做法4: 递归计算（Recursive）
 递归也是functional programming的一个经典思路。利用递归做法，代码会非常精简。不过由于递归调用会使得调用栈变深，在数组长度太大的时候，会stack overflow。
 用Scala代码作：
 ```scala
