@@ -6,10 +6,10 @@ Filter a list
 听上去这种做法很简单，很直观：
 ```java
 List<Integer> filtered = new ArrayList<>();
-List<Integer> list     = Arrays.asList(1, -3, 9, 0);
-for(Integer i : list) {
+List<Integer> toFilter = Arrays.asList(1, -3, 9, 0);
+for(Integer i : toFilter) {
   if(i > 0)
     filtered.add(i);
 }
 ```
-经过这个循环，filtered就成了[1, 9]。很简单！
+经过这个循环，filtered就成了`[1, 9]`。很简单！
