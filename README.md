@@ -2,3 +2,5 @@
 Blog
 
 原创 随笔 
+
+  - [过滤List的4种做法（4 ways to filter a list）](https://github.com/ShengyuanLu/Blog/blob/master/filterList.md)
