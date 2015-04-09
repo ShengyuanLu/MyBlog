@@ -34,4 +34,4 @@ val x = if ({println("hi")  //判断之前还能加其他的操作
              1 < 2 }) "yes" 
         else "no"
 ```
-
+其实尽量把各种语言控制做成有返回值也是functional programming的做法。
