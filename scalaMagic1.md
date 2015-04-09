@@ -1,4 +1,4 @@
-# Scala日记
+# Scala日记(1)
 
 ## 强悍的类型推断 (Type Inference)
 看下面这个最简单的赋值语句：
