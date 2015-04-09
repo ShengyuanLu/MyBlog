@@ -1,6 +1,6 @@
 # Scala之柯里化(currying)
 
-Scala的柯里化就是能定义和使用*多个参数*的函数。
+Scala的柯里化就是能定义和使用**多个参数**的函数。
 好比用Java来写：
 ```java
 String concat(String a)(String b) {
@@ -20,6 +20,6 @@ def concat1(a: String) = {
   (b: String) => a + b
 }
   
-val concat2 = concat1("A")
+val concat2 = concat1("A") //concat2就是(b: String) => a + b
 val s = concat2("B")
 ```
