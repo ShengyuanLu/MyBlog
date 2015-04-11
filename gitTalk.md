@@ -10,6 +10,10 @@ git是啥？是svn的替代品？是github上的软件？
 
 ### 最佳实践(best practice)?
 有些公司内部在推git的时候，往往会推一些实用的best practice。我想说的是，**不能把best practice当操作手册来用，一定要搞懂它背后的理念**。否则，best practice根本不能practice。我看到best practice基本都很难推行，因为工作中会遇到各种各样best practice不能涵盖的场景。由于git的状态比较多(光local机器上就有working area, index和commit库)，所以实践中可能会遇到各种不同的组合。如果，自己再建立些branch。。。够你喝一壶的。
+所以，一定要搞懂它背后的理念，才玩得转。
+
+## IntelliJ集成
+我自己用IntelliJ做开发，所以直接用IntelliJ集成git的插件。使用感觉还不错，图形界面比命令行友好很多啊。不过，由于git的功能复杂，git的插件只能涵盖一部分日常的操作。因此，我的工作模式是“混合模式” : 命令行 + IntelliJ集成git的插件
 
 
 
