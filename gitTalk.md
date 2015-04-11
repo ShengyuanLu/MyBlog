@@ -1,19 +1,22 @@
 # 聊聊git
 
 git是啥？是svn的替代品？是github上的软件？
-我刚接触git的时候，我的第一反映就是：git是svn的升级版，就好像当年svn替代了cvs一样。知道自己用了之后，才知道git这东西和svn一点儿也不一样。
+我刚接触git的时候，我的第一反应就是：git是svn的升级版，就好像当年svn替代了cvs一样。知道自己用了之后，才知道git这东西和svn一点儿也不一样。
 
 ## 学习成本
 凭着自己对svn的经验，我没有看使用手册和相关教程，直接开用。很快，我发现这东西和想象的很不一样！搞不清一会儿要commit，一会儿要push，都是些什么概念。碰了壁，然后开始学习git。所以，git这东西反直觉，需要专门学习。当初，从cvs转到svn的时候几乎没有学习成本。
 
 问了周围用git的人，大多认为它学习**成本很高**。肯定是这样，尤其对没有使用过分布式版本控制系统(distributed version control system)的人来说。因为它的概念和传统的svn这样集中管理的系统不一样。概念不一样的话，学习就需要从头学，难以复用svn的使用经验。听说，有些公司内部推git，用了一阵之后，又转回svn了。
 
-### 最佳实践(best practice)?
-有些公司内部在推git的时候，往往会推一些实用的best practice。我想说的是，**不能把best practice当操作手册来用，一定要搞懂它背后的理念**。否则，best practice根本不能practice。我看到best practice基本都很难推行，因为工作中会遇到各种各样best practice不能涵盖的场景。由于git的状态比较多(光local机器上就有working area, index和commit库)，所以实践中可能会遇到各种不同的组合。如果，自己再建立些branch。。。够你喝一壶的。
+## 最佳实践(best practice)?
+有些公司内部在推git的时候，往往会推一些实用的best practice。我想说的是，**不能把best practice当操作手册来用，一定要搞懂它背后的理念**。否则，best practice根本不能practice。我看到best practice基本都很难推行，因为工作中会遇到各种各样best practice不能涵盖的场景。由于git的状态比较多(光本地机器上就有working area, index和commit库)，所以实践中可能会遇到各种不同的组合。如果，自己再建立些branch。。。够你喝一壶的。
 所以，一定要搞懂它背后的理念，才玩得转。
 
 ## IntelliJ集成
-我自己用IntelliJ做开发，所以直接用IntelliJ集成git的插件。使用感觉还不错，图形界面比命令行友好很多啊。不过，由于git的功能复杂，git的插件只能涵盖一部分日常的操作。因此，我的工作模式是“混合模式” : 命令行 + IntelliJ集成git的插件
+我自己用IntelliJ做开发，所以直接用IntelliJ集成git的插件。使用感觉还不错，图形界面比命令行友好很多啊。不过，由于git的功能复杂，git的插件只能涵盖一部分日常的操作。因此，我的工作模式是“混合模式” : 命令行 + IntelliJ集成git的插件。光靠git的插件可能有些操作不太准确，因为IntelliJ也是调了git的命令行，里面加了一些参数。总体来说，我个人还是比较喜欢用IntelliJ集成插件。譬如说，冲突文件的合并。**尤其是rebase操作，这个交互式操作用IDE来做很合理**，过程像wizard。
+
+
+
 
 
 
