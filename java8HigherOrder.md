@@ -43,10 +43,14 @@ stream.reduce((left, right) -> left + right).get();
 ```
 reduce还有其他两个重载的版本：
 一个是：`T reduce(T identity, BinaryOperator<T> accumulator)`
-举个例子：
+举个例子：譬如有一个元素为1，3，6的stream，要以100为初始值做累加，最后结果是110。
 ```java
-//以100为初始值，然后累加，返回所有元素之和：113
-stream.reduce(100, (left, right) -> left + right);  
+int r = Stream.of(1, 3, 6).reduce(100, (left, right) -> left + right);  
+```
+这个操作可以看作：
+```java
+BinaryOperator<Integer> op = (left, right) -> left + right; 
+int r = op.apply(op.apply(op.apply(100, 1), 3), 6);
 ```
 
 另外一个是和多线程有关的：`<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)`
