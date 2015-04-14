@@ -41,3 +41,8 @@ stream.map(e -> e * 2).collect(Collectors.toList())); //返回4, 6, 8, 10, -2
 //返回所有元素之和：13
 stream.reduce((left, right) -> left + right).get();  
 ```
+reduce还有其他两个重载的版本：
+```java
+//以100为首元素，然后累加，返回所有元素之和：113
+stream.reduce(100, (left, right) -> left + right);  
+```
