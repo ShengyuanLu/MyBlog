@@ -35,3 +35,9 @@ pStream.forEach(i -> System.out.println(i));
 ```java
 stream.map(e -> e * 2).collect(Collectors.toList())); //返回4, 6, 8, 10, -2
 ```
+
+- reduce
+```java
+//返回所有元素之和：13
+stream.reduce((left, right) -> left + right).get();  
+```
