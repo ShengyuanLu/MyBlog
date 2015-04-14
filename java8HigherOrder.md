@@ -53,16 +53,12 @@ BinaryOperator<Integer> op = (left, right) -> left + right;
 int r = op.apply(op.apply(op.apply(100, 1), 3), 6);
 ```
 
-另外一个是和多线程有关的：`<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)`
-  BiFunction<Integer, Integer, Integer> bf =
-                (left, right) -> {
-                    System.out.println("bf:" + left + "," + right);
-                    return left + right;
-                };
-        BinaryOperator<Integer> cb =
-                (left, right) ->
-                {
-                    System.out.println("cb:" + left + "," + right);
-                    return left + right;
-                };
-        System.out.println(pStream.reduce(0, bf, cb));
+另外一个是和多线程有关的：`<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)`。
+它被用在并行stream上面，如果用在串行stream上，那么那个combiner是不会被用到的。举个例子，我们要把每个stream里面的元素乘以2，然后求和：
+```java
+BiFunction<Integer, Integer, Integer> accumulator = (init, e) -> init * e;
+BinaryOperator<Integer> combiner = (left, right) -> left + right;
+int r = Stream.of(1, 3, 6)
+  .parallel()
+  .reduce(2, accumulator, combiner); //2*1 + 2*3 + 2*6 = 20
+```
