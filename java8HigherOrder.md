@@ -11,3 +11,13 @@ Stream<Integer> stream = col.stream();
 ```java
 stream.anyMatch(i -> i > 4); //返回true，因为有个5。
 ```
+
+- allMatch
+```java
+stream.allMatch(i -> i < 6); //返回true，因为所有元素小于6。
+```
+
+- forEach
+```java
+stream.forEach(i -> System.out.println(i)); //打印2, 3, 4, 5, -1
+```
