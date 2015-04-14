@@ -37,10 +37,16 @@ stream.map(e -> e * 2).collect(Collectors.toList())); //返回4, 6, 8, 10, -2
 ```
 
 - reduce
+reduce是把元素做迭代运算，最后返回**一个**值的计算。
 ```java
-//返回所有元素之和：13
-stream.reduce((left, right) -> left + right).get();  
+int r = Stream.of(1, 3, 6).reduce((left, right) -> left + right).get();  //1+3+6=10
 ```
+这个操作可以看作：
+```java
+BinaryOperator<Integer> accumulator = (left, right) -> left + right;
+int r = accumulator.apply(accumulator.apply(1, 3),6);
+```
+
 reduce还有其他两个重载的版本：
 一个是：`T reduce(T identity, BinaryOperator<T> accumulator)`
 举个例子：譬如有一个元素为1，3，6的stream，要以100为初始值做累加，最后结果是110。
@@ -62,3 +68,5 @@ int r = Stream.of(1, 3, 6)
   .parallel()
   .reduce(2, accumulator, combiner); //2*1 + 2*3 + 2*6 = 20
 ```
+accumulator的作用是在多线程上做累计计算，在这个例子里面就是做`2*元素`的计算。
+combiner的作用是把多个accumulator的结果做合并，在这个例子里面就是做加法。
