@@ -11,4 +11,6 @@
   - [Java8 Stream.reduce方法详解 (Java8 Stream.reduce)](https://github.com/ShengyuanLu/MyBlog/blob/master/Java8Reduce.md)
 
 
+
+*如需转帖，请标注此出处，谢谢！*
 <img src="http://img.ph.126.net/NToJj5NprMcZdlMt1JLXZQ==/146929937846465214.jpg"     height="150px"  /> 
