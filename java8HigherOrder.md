@@ -42,7 +42,23 @@ stream.map(e -> e * 2).collect(Collectors.toList())); //返回4, 6, 8, 10, -2
 stream.reduce((left, right) -> left + right).get();  
 ```
 reduce还有其他两个重载的版本：
+一个是：`T reduce(T identity, BinaryOperator<T> accumulator)`
+举个例子：
 ```java
-//以100为首元素，然后累加，返回所有元素之和：113
+//以100为初始值，然后累加，返回所有元素之和：113
 stream.reduce(100, (left, right) -> left + right);  
 ```
+
+另外一个是和多线程有关的：`<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)`
+  BiFunction<Integer, Integer, Integer> bf =
+                (left, right) -> {
+                    System.out.println("bf:" + left + "," + right);
+                    return left + right;
+                };
+        BinaryOperator<Integer> cb =
+                (left, right) ->
+                {
+                    System.out.println("cb:" + left + "," + right);
+                    return left + right;
+                };
+        System.out.println(pStream.reduce(0, bf, cb));
