@@ -46,6 +46,7 @@ int r = Stream.of(1, 3, 6).reduce((left, right) -> left + right).get();  //1+3+6
 BinaryOperator<Integer> accumulator = (left, right) -> left + right;
 int r = accumulator.apply(accumulator.apply(1, 3),6);
 ```
+注意这个方法返回的是一个Optional的类型。如果是个空stream，那么reduce出来是个`Optional.empty()`。
 
 reduce还有其他两个重载的版本：
 一个是：`T reduce(T identity, BinaryOperator<T> accumulator)`
@@ -78,7 +79,7 @@ Thread2: `accumulator.apply(2, 3) = 6`
 
 Thread3: `accumulator.apply(2, 6) = 12`
 
-假设Thread1，Thread2先做完乘法，这个时候不等Thread3做`accumulator.apply(2, 6)`，可以先做Thread1，Thread2结果的合并加法：'combiner.apply(2, 6) = 8'。
+假设Thread1，Thread2先做完乘法，这个时候不等Thread3做`accumulator.apply(2, 6)`，可以先做Thread1，Thread2结果的合并加法：`combiner.apply(2, 6) = 8`。
 此时Thread3做完2*6的计算，就可以做最后的合并：把刚才combiner得到的8加上accumulator得到的12，即8+12=20。
 因此在整个计算过程中，accumulator和combiner是犬牙交错，没有一定顺序的。
 
