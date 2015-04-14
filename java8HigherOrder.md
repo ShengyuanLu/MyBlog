@@ -27,6 +27,11 @@ stream.forEach(i -> System.out.println(i)); //打印2, 3, 4, 5, -1
 ```java
 //即使使用多线程，仍保证打印顺序2, 3, 4, 5, -1
 pStream.forEachOrdered(i -> System.out.println(i)); 
+
 //对比forEach，对比forEach在使用多线程下，不能保证打印顺序：2, 3, 4, 5, -1
 pStream.forEach(i -> System.out.println(i)); 
+```
+- map
+```java
+stream.map(e -> e * 2).collect(Collectors.toList())); //返回4, 6, 8, 10, -2
 ```
