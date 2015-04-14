@@ -71,9 +71,13 @@ int r = Stream.of(1, 3, 6)
 accumulator的作用是在多线程上做累计计算，在这个例子里面就是做`2*元素`的计算。
 combiner的作用是把多个accumulator的结果做合并，在这个例子里面就是做加法。
 上面的那段代码就可以被看作，有多个线程并行计算：
+
 Thread1: `accumulator.apply(2, 1) = 2`
+
 Thread2: `accumulator.apply(2, 3) = 6`
+
 Thread3: `accumulator.apply(2, 6) = 12`
+
 假设Thread1，Thread2先做完乘法，这个时候不等Thread3做`accumulator.apply(2, 6)`，可以先做Thread1，Thread2结果的合并加法：'combiner.apply(2, 6) = 8'。
 此时Thread3做完2*6的计算，就可以做最后的合并：把刚才combiner得到的8加上accumulator得到的12，即8+12=20。
 因此在整个计算过程中，accumulator和combiner是犬牙交错，没有一定顺序的。
