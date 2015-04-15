@@ -13,7 +13,7 @@ BinaryOperator<Integer> accumulator = (left, right) -> left + right;
 int sum = accumulator.apply(accumulator.apply(1, 3),6);
 ```
 注意这个方法返回的是一个`Optional`的类型。如果是个空stream，那么reduce出来是个`Optional.empty()`。
-
+***
 
 2. `T reduce(T identity, BinaryOperator<T> accumulator)`
 
@@ -26,7 +26,7 @@ int sum = Stream.of(1, 3, 6).reduce(100, (left, right) -> left + right);
 BinaryOperator<Integer> op = (left, right) -> left + right; 
 int sum = op.apply(op.apply(op.apply(100, 1), 3), 6);
 ```
-
+***
 
 3. `<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)`
 
