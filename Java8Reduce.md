@@ -1,7 +1,7 @@
 ## Java8 Stream.reduce方法详解 (Java8 Stream.reduce)
 reduce是把元素做迭代运算，最后返回**一个**值的计算。它有3个重载版本：
 
-1. `Optional reduce(BinaryOperator accumulator)`
+### `Optional reduce(BinaryOperator accumulator)`
 
 举个例子，我们对1, 3, 6做合计操作：
 ```java
@@ -15,7 +15,7 @@ int sum = accumulator.apply(accumulator.apply(1, 3),6);
 注意这个方法返回的是一个`Optional`的类型。如果是个空stream，那么reduce出来是个`Optional.empty()`。
 ***
 
-2. `T reduce(T identity, BinaryOperator<T> accumulator)`
+### `T reduce(T identity, BinaryOperator<T> accumulator)`
 
 还是累加的例子，这次要以100为初始值做累加，最后结果是110。
 ```java
@@ -28,7 +28,7 @@ int sum = op.apply(op.apply(op.apply(100, 1), 3), 6);
 ```
 ***
 
-3. `<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)`
+### `<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner)`
 
 它被用在**并行stream**上面，如果用在串行stream上，那么那个combiner是不会被用到的。举个例子，我们要把每个stream里面的元素乘以2，然后求和：
 ```java
