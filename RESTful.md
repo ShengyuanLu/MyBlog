@@ -25,5 +25,6 @@ RESTful里还有cache的概念，想想HTTP协议里面有一大堆和cache相�
 动词 | 幂等  | 副作用 |
 -----|-------|--------|
 GET   | Y    | N   |
-
-
+POST  | N    | Y   |
+PUT  | Y    | Y   |
+DELETE  | Y | Y |
