@@ -8,4 +8,5 @@
 
 RESTful里还有cache的概念，想想HTTP协议里面有一大堆和cache相关的header。和时间相关的cache，还有和内容相关的cache的。这些cache必须和GET动词联合用才有效果。这完全就是HTTP的概念。当然，还有标准的response code。
 
-
+### HATEOAS (Hypermedia as the Engine of Application State)
+这是RESTful最高的最成熟的级别，也是大家感觉比较玄虚的部分。别忘了我之前说的：RESTful和HTTP的关系。我认为，现在一般的网页都基本实现了这个HATEOAS！是不是觉得不太对？！看看HATEOAS的一个重要标准就是：client不需要事先知道server的变更，仍旧能正常工作。想想我们平时用浏览器上网，其实就能达到这个目的。譬如，一个网站改版了，用户仍旧能够完成先前的操作。
