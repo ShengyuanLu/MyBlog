@@ -10,6 +10,7 @@
   - [聊聊git](https://github.com/ShengyuanLu/MyBlog/blob/master/gitTalk.md)
   - [Java8 Stream.reduce方法详解 (Java8 Stream.reduce)](https://github.com/ShengyuanLu/MyBlog/blob/master/Java8Reduce.md)
   - [延迟和吞吐量的区别 (Difference between latency and throughput)](https://github.com/ShengyuanLu/MyBlog/blob/master/performance.md)
+  - [我理解的RESTful](https://github.com/ShengyuanLu/MyBlog/blob/master/RESTful.md)
 
 
 
