@@ -11,6 +11,7 @@
   - [Java8 Stream.reduce方法详解 (Java8 Stream.reduce)](https://github.com/ShengyuanLu/MyBlog/blob/master/Java8Reduce.md)
   - [延迟和吞吐量的区别 (Difference between latency and throughput)](https://github.com/ShengyuanLu/MyBlog/blob/master/performance.md)
   - [我理解的RESTful](https://github.com/ShengyuanLu/MyBlog/blob/master/RESTful.md)
+  - [不实用的函数式编程 Functional Programming Not Practical](https://github.com/ShengyuanLu/MyBlog/blob/master/functionalProgrammingNotPractical.md)
 
 
 
