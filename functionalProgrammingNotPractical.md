@@ -24,3 +24,5 @@ Java8 lambda表达式的出现缓解了一些Java优雅性的问题。当然lamb
  - 纯函数编程语言的生态系统如何？工具和第三方包足够吗？
 
 但凡这些纯函数式编程语言，在业界都没有很好的市场。倒不是拉黑这些语言，我只是说它们不实用。但是它们的学习价值相当高，学习它们会使人的编程能力跃上一个新的台阶。
+Paul Graham的原话是:
+> Lisp is worth learning for the profound enlightenment experience you will have when you finally get it; that experience will make you a better programmer for the rest of your days, even if you never actually use Lisp itself a lot.
