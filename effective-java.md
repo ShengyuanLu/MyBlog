@@ -12,26 +12,24 @@ Effective Java不是教你怎么写Java，而是让你怎么**更好地写Java**
 
 举几个例子：
 
-- Item 16 Favor composition over inheritance
-
+- Item 16: Favor composition over inheritance
 组合优先于继承，是不是很耳熟？这不就是"设计模式"的思路么。
 
-- Item 13 Minimize the accessibility of classes and members 
-
+- Item 13: Minimize the accessibility of classes and members 
 这适用于所有面向对象编程的原则。
+
+- Item 38: Check parameters for validity
+防御性编程。
+
+- Item 40: Design method signatures carefull
+API设计。
+
+- Item 45: Minimize the scope of local variables
+重构实践。
 
 
 ### 现实中的代码
 以我在这个行业的经验来看，大部分的产品Java代码并没有遵循Effective Java的建议。这真是行业的极大损失。
 
 我后来看到Google的一些Java开源项目，我认为那些代码非常遵循Effective Java的建议。这是不是和Joshua Bloch加如Google成为高级架构师有关，我不敢说。但是我敢说，那些Java的顶尖高手都是读过这本书，而且在他们的代码里实践了这些东西。
-
-
-
-
-
-
-
-
-
 
