@@ -35,4 +35,4 @@ API设计。
 ## 悲惨的现实
 以我在这个行业的经验来看，大部分的商业产品Java代码并没有遵循Effective Java的建议。这真是行业的**重大损失**啊。
 
-我后来看到Google的一些Java开源项目，我认为那些代码非常遵循Effective Java的建议。这是不是和Joshua Bloch加如Google成为高级架构师有关，我不敢说。但是我敢说，那些Java的顶尖高手都是读过这本书，而且在他们的代码里实践了这些东西。
+后来看到Google的一些Java开源项目，我认为那些代码非常遵循Effective Java的建议。这是不是和Joshua Bloch加如Google成为高级架构师有关，我不敢说。但是我敢说，那些Java的顶尖高手都是读过这本书，而且在他们的代码里实践了这些东西。
