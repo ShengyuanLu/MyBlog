@@ -10,7 +10,16 @@ Effective Java是本价值极高的书。如果有人要我推荐一本Java书�
 ### 更好地写代码
 Effective Java不是教你怎么写Java，而是让你怎么**更好地写Java**（以及其他编程语言）。我知道大家都看过Think in Java，这是本好书。就是我说的，它是教你怎么写Java。而读Effective Java的前提是你已经比较了解Java语言了，你希望能写得更好。
 
-举个例子：Item 16: Favor composition over inheritance。组合优先于继承，是不是很耳熟？这不就是"设计模式"
+举几个例子：
+
+- Item 16 Favor composition over inheritance
+
+组合优先于继承，是不是很耳熟？这不就是"设计模式"的思路么。
+
+- Item 13 Minimize the accessibility of classes and members 
+
+这适用于所有面向对象编程的原则。
+
 
 ### 现实中的代码
 以我在这个行业的经验来看，大部分的产品Java代码并没有遵循Effective Java的建议。这真是行业的极大损失。
