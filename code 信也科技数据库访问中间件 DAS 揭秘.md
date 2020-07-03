@@ -119,7 +119,7 @@ public SqlBuilder seletPersonLike (String id, String firstName, String lastName)
 ```
  
 
-# 8
+# 9
 ```java
 // Sharding database and table with using hintManager ，
 String sql = "SELECT * FROM t order";    
